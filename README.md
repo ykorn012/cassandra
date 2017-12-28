@@ -17,7 +17,7 @@ Masterless Architecture (특정 노드가 Coordinator 역할을 전담하는 기
 1. [Getting Started with Time Series Data Modeling](https://academy.datastax.com/resources/getting-started-time-series-data-modeling)
 2. [Apache Cassandra NoSQL Performance Benchmarks](https://academy.datastax.com/planet-cassandra/nosql-performance-benchmarks)
 3. [Downloading Cassandra & Install](http://cassandra.apache.org/download/)
-4. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm)
+4. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/index.htm)
 6. [DB Engines Ranking](https://db-engines.com/en/ranking)
 7. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md)
 8. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/)
@@ -51,23 +51,89 @@ sudo apt install oracle-java8-set-default
 ~~~
 sudo apt-get install libjna-java  
 ~~~ 
-3. Reference Site #1을 참조하여 Cassandra 설치
-4. cqlsh를 사용하여 Reference Site #2를 참조하여 사용
-5. Create Keyspace & TABLE
+3. Reference Site #3을 참조하여 Cassandra 설치
+
+4. Reference Site #4을 참조하여 Eclipse Environment Maven 환경 구성 (Cassandra - Installation - Eclipse Environment)
+~~~
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.isd</groupId>
+	<artifactId>cassandra</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>3.9.0.Final</version>
+		</dependency>
+	</dependencies>
+</project>
+~~~
+
+5. Reference Site #4 참조하여 cqlsh를 이용한 Keyspace & TABLE 생성
 ~~~
 cqlsh.> CREATE KEYSPACE tutorialspoint
 WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
 cqlsh> DESCRIBE keyspaces;
 
 cqlsh> USE tutorialspoint;
-cqlsh:tutorialspoint>; CREATE TABLE emp(
+
+cqlsh:tutorialspoint> CREATE TABLE emp(
    emp_id int PRIMARY KEY,
    emp_name text,
    emp_city text,
    emp_sal varint,
    emp_phone varint
    );
+   
+cqlsh:tutorialspoint> select * from emp;
+
+ emp_id | emp_city | emp_name | emp_phone | emp_sal
+--------+----------+----------+-----------+---------
 ~~~   
+
 6. Source의 CreateData Java Class 실행
 
 ## TroubleShootings
