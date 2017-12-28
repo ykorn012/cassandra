@@ -1,5 +1,5 @@
-# cassandra
 Cassandra PoC
+==
 
 Cassandra 는 아파치 재단에서 관리하는 오픈소스 NoSQL 분산 데이터베이스 관리 시스템이다.
 2008년, Google BigTable의 컬럼 기반 데이터 모델과 Amazon Dynamo의 분산 모델을 기반으로 하여 
@@ -14,12 +14,13 @@ Masterless Architecture (특정 노드가 Coordinator 역할을 전담하는 기
 
 
 ## Reference Site
-1. [Getting Started with Time Series Data Modeling]https://academy.datastax.com/resources/getting-started-time-series-data-modeling
-2. [Downloading Cassandra & Install](http://cassandra.apache.org/download/) 
-3. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm)
-4. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md)
-5. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/)
-6. [윈도우 10에서 Bash shell 지원](https://blogs.msdn.microsoft.com/eva/?p=7633)
+1. [Getting Started with Time Series Data Modeling](https://academy.datastax.com/resources/getting-started-time-series-data-modeling)
+2. [Apache Cassandra NoSQL Performance Benchmarks](https://academy.datastax.com/planet-cassandra/nosql-performance-benchmarks)
+3. [Downloading Cassandra & Install](http://cassandra.apache.org/download/) 
+4. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm)
+5. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md)
+6. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/)
+7. [윈도우 10에서 Bash shell 지원](https://blogs.msdn.microsoft.com/eva/?p=7633)
    
 ## Install & Environments
 1. java 설치 
@@ -32,37 +33,22 @@ sudo apt-get install libjna-java
 ~~~ 
 3. Reference Site #1을 참조하여 Cassandra 설치
 4. cqlsh를 사용하여 Reference Site #2를 참조하여 사용
-5. 아래 Java Source로 Test
+5. Create Keyspace & TABLE
 ~~~
-package com.isd.poc.cassandra;
+cqlsh.> CREATE KEYSPACE tutorialspoint
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+cqlsh> DESCRIBE keyspaces;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
-
-class CreateData {
-	public static void main(String args[]) throws Exception {
-		String query = "Truncate emp;"; // Query
-		Cluster cluster = Cluster.builder().addContactPoint("127.0.0.1").build(); // Creating Cluster object
-		Session session = cluster.connect("tutorialspoint"); // Creating Session object
-		session.execute(query); // Executing the query
-		System.out.println("Table truncated");
-		
-		// queries
-		String query1 = "INSERT INTO emp (emp_id, emp_name, emp_city, emp_phone,  emp_sal)"
-				+ " VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);";
-		String query2 = "INSERT INTO emp (emp_id, emp_name, emp_city, emp_phone, emp_sal)"
-				+ " VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);";
-		String query3 = "INSERT INTO emp (emp_id, emp_name, emp_city, emp_phone, emp_sal)"
-				+ " VALUES(3,'rahman', 'Chennai', 9848022330, 45000);";
-		
-		// Executing the query
-		session.execute(query1);
-		session.execute(query2);
-		session.execute(query3);
-		System.out.println("Data created");
-	}
-}
-~~~
+cqlsh> USE tutorialspoint;
+cqlsh:tutorialspoint>; CREATE TABLE emp(
+   emp_id int PRIMARY KEY,
+   emp_name text,
+   emp_city text,
+   emp_sal varint,
+   emp_phone varint
+   );
+~~~   
+6. Source의 CreateData Java Class 실행
 
 ## TroubleShootings
 1. 인증서 문제 : /etc/ssl/certs/에 다가 cert 복사
