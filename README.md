@@ -25,24 +25,24 @@ Masterless Architecture (특정 노드가 Coordinator 역할을 전담하는 기
    
 ## Install & Environments
 1. java 설치 
-1) PPA를 추가
+- PPA를 추가
 ~~~
 sudo add-apt-repository ppa:webupd8team/java
 ~~~
-2) apt 업데이트
+- apt 업데이트
 ~~~
 sudo apt update
 ~~~
-3) Java8 을 설치
+- Java8 을 설치
 ~~~
 sudo apt install oracle-java8-installer
 ~~~
-4) 설치 확인
+- 설치 확인
 ~~~
 javac -version
 java -version
 ~~~
-5) Java 환경변수 자동 설정
+- Java 환경변수 자동 설정
 ~~~
 sudo apt install oracle-java8-set-default
 ~~~
