@@ -26,5 +26,7 @@ class CreateData {
 		session.execute(query2);
 		session.execute(query3);
 		System.out.println("Data created");
+		session.close();
+		cluster.close();
 	}
 }
