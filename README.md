@@ -134,7 +134,23 @@ cqlsh:tutorialspoint> select * from emp;
 --------+----------+----------+-----------+---------
 ~~~   
 
-6. Source의 CreateData Java Class 실행
+6. Source의 CreateData Java Class 실행 결과
+~~~
+ykorn012@JUNG01:/mnt/c/Users/Jung01$ cqlsh
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.11.1 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+cqlsh> USE tutorialspoint;
+cqlsh:tutorialspoint> select * from emp;
+
+ emp_id | emp_city  | emp_name | emp_phone  | emp_sal
+--------+-----------+----------+------------+---------
+      1 | Hyderabad |      ram | 9848022338 |   50000
+      2 | Hyderabad |    robin | 9848022339 |   40000
+      3 |   Chennai |   rahman | 9848022330 |   45000
+
+(3 rows)
+~~~
 
 ## TroubleShootings
 1. 인증서 문제 : /etc/ssl/certs/에 다가 cert 복사
