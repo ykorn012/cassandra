@@ -14,13 +14,13 @@ Masterless Architecture (특정 노드가 Coordinator 역할을 전담하는 기
 
 
 ## Reference Site
-1. [Getting Started with Time Series Data Modeling](https://academy.datastax.com/resources/getting-started-time-series-data-modeling)
-2. [Apache Cassandra NoSQL Performance Benchmarks](https://academy.datastax.com/planet-cassandra/nosql-performance-benchmarks)
-3. [Downloading Cassandra & Install](http://cassandra.apache.org/download/) 
-4. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm)
-5. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md)
-6. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/)
-7. [윈도우 10에서 Bash shell 지원](https://blogs.msdn.microsoft.com/eva/?p=7633)
+1. [Getting Started with Time Series Data Modeling](https://academy.datastax.com/resources/getting-started-time-series-data-modeling){: target="_blank" }
+2. [Apache Cassandra NoSQL Performance Benchmarks](https://academy.datastax.com/planet-cassandra/nosql-performance-benchmarks){: target="_blank" }
+3. [Downloading Cassandra & Install](http://cassandra.apache.org/download/){: target="_blank" }
+4. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm){: target="_blank" }
+5. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md){: target="_blank" }
+6. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/){: target="_blank" }
+7. [윈도우 10에서 Bash shell 지원](https://blogs.msdn.microsoft.com/eva/?p=7633){: target="_blank" }
    
 ## Install & Environments
 1. java 설치 
