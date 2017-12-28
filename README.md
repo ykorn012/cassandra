@@ -11,7 +11,7 @@ Cassandra PoC
 
 ## TroubleShootings
 1. 인증서 문제 : /etc/ssl/certs/에 다가 cert 복사
-“`
+~~~    
 ykorn012@Jung01:/mnt/d/SWTools/cassendra$ curl -v  https://google.com
 * Rebuilt URL to: https://google.com/
 *   Trying 70.10.15.10...
@@ -27,4 +27,4 @@ ykorn012@Jung01:/mnt/d/SWTools/cassendra$ curl -v  https://google.com
 * Proxy replied OK to CONNECT request
 * found 173 certificates in /etc/ssl/certs/ca-certificates.crt
 * found 692 certificates in /etc/ssl/certs
-“`
+~~~
