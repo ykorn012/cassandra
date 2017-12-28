@@ -56,8 +56,6 @@ class CreateData {
 ~~~
 ykorn012@Jung01:/mnt/d/SWTools/cassendra$ curl -v  https://google.com
 * Rebuilt URL to: https://google.com/
-*   Trying 70.10.15.10...
-* Connected to 70.10.15.10 (70.10.15.10) port 8080 (#0)
 * Establish HTTP proxy tunnel to google.com:443
 > CONNECT google.com:443 HTTP/1.1
 > Host: google.com:443
