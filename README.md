@@ -1,6 +1,6 @@
 # cassandra
 Cassandra PoC
-= Cassandra Desciption
+
 Cassandra 는 아파치 재단에서 관리하는 오픈소스 NoSQL 분산 데이터베이스 관리 시스템이다.
 2008년, Google BigTable의 컬럼 기반 데이터 모델과 Amazon Dynamo의 분산 모델을 기반으로 하여 
 Facebook의 Avinash Lakshman (Amazon Dynamo 의 저자 중 한 사람)와 Prashant Malik에 
@@ -9,6 +9,7 @@ Facebook의 Avinash Lakshman (Amazon Dynamo 의 저자 중 한 사람)와 Prasha
 Masterless Architecture (특정 노드가 Coordinator 역할을 전담하는 기존의 Master-Slave 
 방식과 달리, 모든 노드가 Coordinator 역할을 수행할 수 있는 토큰링 구조) 로 인한 고성능&고가용성의 장점이 있으며, 
 기존의 RDBMS 와는 달리 Scale out 을 통한 성능 향상이 수월하다는 점도 그 폭발적인 인기에 한 몫을 하고 있다. 
+
 ![이미지 이름](http://culturallife.xyz/wp-content/uploads/2017/03/%EC%BA%A1%EC%B2%98.png)
 
 
