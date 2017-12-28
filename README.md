@@ -4,12 +4,22 @@ Cassandra PoC
 ## Reference Site
 1. [Downloading Cassandra & Install](http://cassandra.apache.org/download/) 
 2. [Learn Cassandra](https://www.tutorialspoint.com/cassandra/cassandra_create_keyspace.htm)
+3. [How to install Cassandra on Ubuntu?](https://github.com/ykorn012/cassandra/blob/master/README.md)
+4. [How to run graphical Linux applications on Bash on Ubuntu on Windows 10](https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/)
+5. [윈도우 10에서 Bash shell 지원](https://blogs.msdn.microsoft.com/eva/?p=7633)
    
 ## Install & Environments
-1. Reference Site #1을 참조하여 Cassandra 설치
-2. Reference Site #1을 참조하여 Cassandra 설치
-3. cqlsh를 사용하여 Reference Site #2를 참조하여 사용
-4. 아래 Java Source로 Test
+1. java 설치 
+~~~
+sudo apt-get install openjdk-8-jdk or sudo apt-get install oracle-java8-set-default
+~~~
+2. Install Java Native Access (JNA)
+~~~
+sudo apt-get install libjna-java  
+~~~ 
+3. Reference Site #1을 참조하여 Cassandra 설치
+4. cqlsh를 사용하여 Reference Site #2를 참조하여 사용
+5. 아래 Java Source로 Test
 ~~~
 package com.isd.poc.cassandra;
 
@@ -60,3 +70,10 @@ ykorn012@Jung01:/mnt/d/SWTools/cassendra$ curl -v  https://google.com
 * found 173 certificates in /etc/ssl/certs/ca-certificates.crt
 * found 692 certificates in /etc/ssl/certs
 ~~~  
+
+2. Python 설치
+1) https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh 다운로드 후 설치
+2) You are using pip version 8.1.2, however version 9.0.1 is available. 
+~~~
+conda update pip
+pip install tensorflow
