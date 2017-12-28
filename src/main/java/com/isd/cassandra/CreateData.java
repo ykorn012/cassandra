@@ -1,7 +1,9 @@
-package com.isd.poc.cassandra;
+/* Cassandra Test */
+
+package com.isd.cassandra;
 
 import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
+import com.datastax.driver.core.Session; 
 
 class CreateData {
 	public static void main(String args[]) throws Exception {
